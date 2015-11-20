@@ -1,4 +1,4 @@
-package td;
+package TD_devoir_Charpentier_Louis.model;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
