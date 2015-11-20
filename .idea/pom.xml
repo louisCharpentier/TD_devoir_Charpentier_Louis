@@ -5,7 +5,7 @@
     <!--
      | POM Relationships
 	-->
-    <groupId>TD_devoir_Charpentier_Louis</groupId>
+    <groupId>com.pbz4esilv</groupId>
     <artifactId>TD_devoir_Charpentier_Louis</artifactId>
     <version>0.1</version>
 
