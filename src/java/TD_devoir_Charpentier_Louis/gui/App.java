@@ -45,7 +45,7 @@ public class App extends Application {
         numberFrom.setLayoutY(20);
 
         TextField numberTo=new TextField();
-        //numberTo.setDisable(true);
+        numberTo.setDisable(true);
         numberTo.setPrefSize(75,12);
         numberTo.setLayoutX(210);
         numberTo.setLayoutY(20);
