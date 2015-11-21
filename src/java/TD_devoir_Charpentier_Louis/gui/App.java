@@ -10,9 +10,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 
-/**
- * Created by Louis on 20/11/2015.
- */
+
 public class App extends Application {
     private String fromMoney;
     private String toMoney;
@@ -20,18 +18,7 @@ public class App extends Application {
 
         Application.launch(App.class, args);
     }
-    public String caclul(String fromMoney,String toMoney,String value)
-    {
-        return "";
-    }
-    public void setValue(int value,String fromOrTo)
-    {
-        if(fromOrTo=="from")
-        {
-            if(value==0)
-            {}
-        }
-    }
+
     @Override
     public void start(Stage primaryStage) {
 
