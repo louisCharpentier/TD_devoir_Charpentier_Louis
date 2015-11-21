@@ -1,9 +1,7 @@
 package TD_devoir_Charpentier_Louis.gui;
-import TD_devoir_Charpentier_Louis.model.Controller;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -221,10 +219,72 @@ public class App extends Application {
 
     private String calcul(String fromMoney,String toMoney,String value)
     {
-        if(fromMoney=="EUR")
+
+
+        if(fromMoney.equalsIgnoreCase("EUR"))
         {
-            if(toMoney=)
+
+            if(toMoney.equalsIgnoreCase("EUR"))
+            {
+                return String.valueOf(Integer.parseInt(value));
+            }
+            else if(toMoney.equalsIgnoreCase("USD"))
+            {
+
+                return String.valueOf(Integer.parseInt(value)*1.065);
+            }
+            else if(toMoney.equalsIgnoreCase("GBD"))
+            {
+                return String.valueOf(Integer.parseInt(value)*0.7);
+            }
+            else
+            {
+                return "Error";
+            }
+
         }
-        return "";
+      else  if(fromMoney.equalsIgnoreCase("USD"))
+        {
+            if(toMoney.equalsIgnoreCase("EUR"))
+            {
+                return String.valueOf(Integer.parseInt(value)*0.94);
+            }
+            else if(toMoney.equalsIgnoreCase("USD"))
+            {
+                return String.valueOf(Integer.parseInt(value));
+            }
+            else if(toMoney.equalsIgnoreCase("GBD"))
+            {
+                return String.valueOf(Integer.parseInt(value)*0.66);
+            }
+            else
+            {
+                return "Error";
+            }
+
+    }
+        else if(fromMoney.equalsIgnoreCase("GBD"))
+        {
+            if(toMoney.equalsIgnoreCase("EUR"))
+            {
+                return String.valueOf(Integer.parseInt(value)*1.43);
+            }
+            else if(toMoney.equalsIgnoreCase("USD"))
+            {
+                return String.valueOf(Integer.parseInt(value)*1.52);
+            }
+            else if(toMoney.equalsIgnoreCase("GBD"))
+            {
+                return String.valueOf(Integer.parseInt(value));
+            }
+            else
+            {
+                return "Error";
+            }
+}
+    else
+        {
+            return "error";
+        }
     }
 }
