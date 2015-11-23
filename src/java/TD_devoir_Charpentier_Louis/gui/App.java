@@ -24,170 +24,183 @@ public class App extends Application {
 
 
         primaryStage.setTitle("Convertisseur!");
+        primaryStage.setMaxHeight(300);
+        primaryStage.setMaxWidth(400);
         Group root= new Group();
         Scene scene = new Scene(root,300,250,Color.GRAY);
+
+        //Adds these buttons and textfield
         TextField numberFrom=new TextField();
+        TextField numberTo=new TextField();
+        Button EURFrom = new Button();
+        Button USDFrom = new Button();
+        Button GBDFrom = new Button();
+        Button GBDTo = new Button();
+        Button USDTo = new Button();
+        Button EURTo = new Button();
+        Button calcul = new Button();
+
+
+
+        //Size and layouts of buttons
         numberFrom.setPrefSize(75, 12);
         numberFrom.setLayoutX(20);
         numberFrom.setLayoutY(20);
 
-        TextField numberTo=new TextField();
         numberTo.setDisable(true);
-        numberTo.setPrefSize(75,12);
+        numberTo.setPrefSize(75, 12);
         numberTo.setLayoutX(210);
         numberTo.setLayoutY(20);
 
-
-        Button EURFrom = new Button();
         EURFrom.setText("EUR");
         EURFrom.setLayoutX(20);
         EURFrom.setLayoutY(100);
-        EURFrom.setOnAction(new EventHandler<ActionEvent>() {
 
-            public void handle(ActionEvent event) {
-                if(EURFrom.getTextFill()==Color.RED)
-                {
-                    EURFrom.setTextFill(Color.BLACK);
-
-                }
-                else
-                {EURFrom.setTextFill(Color.RED);
-                    fromMoney="EUR";
-
-                }
-
-            }
-        });
-
-        Button USDFrom = new Button();
         USDFrom.setText("USD");
         USDFrom.setLayoutX(20);
         USDFrom.setLayoutY(130);
-        USDFrom.setOnAction(new EventHandler<ActionEvent>() {
 
-            public void handle(ActionEvent event)
-            {
-                if(USDFrom.getTextFill()==Color.RED)
-            {
-                USDFrom.setTextFill(Color.BLACK);
-
-            }
-            else
-            {
-                USDFrom.setTextFill(Color.RED);
-                EURFrom.setTextFill(Color.BLACK);
-                fromMoney="USD";
-
-            }
-            }
-        });
-
-        Button GBDFrom = new Button();
         GBDFrom.setText("GBD");
         GBDFrom.setLayoutX(20);
         GBDFrom.setLayoutY(160);
+
+        USDTo.setText("USD");
+        USDTo.setLayoutX(250);
+        USDTo.setLayoutY(130);
+
+        GBDTo.setText("GBD");
+        GBDTo.setLayoutX(250);
+        GBDTo.setLayoutY(160);
+
+        EURTo.setText("EUR");
+        EURTo.setLayoutX(250);
+        EURTo.setLayoutY(100);
+
+        calcul.setText("Calcul");
+        calcul.setLayoutX(125);
+        calcul.setLayoutY(225);
+
+        USDTo.setText("USD");
+        USDTo.setLayoutX(250);
+        USDTo.setLayoutY(130);
+        //Button's actions
+        EURFrom.setOnAction(new EventHandler<ActionEvent>() {
+
+            public void handle(ActionEvent event) {
+                if (EURFrom.getTextFill() == Color.RED) {
+                    EURFrom.setTextFill(Color.BLACK);
+
+                } else {
+                    EURFrom.setTextFill(Color.RED);
+                    GBDFrom.setTextFill(Color.BLACK);
+                    USDFrom.setTextFill(Color.BLACK);
+                    fromMoney = "EUR";
+
+                }
+
+            }
+        });
+
+        USDFrom.setOnAction(new EventHandler<ActionEvent>() {
+
+            public void handle(ActionEvent event) {
+                if (USDFrom.getTextFill() == Color.RED) {
+                    USDFrom.setTextFill(Color.BLACK);
+
+                } else {
+                    USDFrom.setTextFill(Color.RED);
+                    GBDFrom.setTextFill(Color.BLACK);
+                    EURFrom.setTextFill(Color.BLACK);
+                    fromMoney = "USD";
+
+                }
+            }
+        });
+
         GBDFrom.setOnAction(new EventHandler<ActionEvent>() {
 
             public void handle(ActionEvent event) {
 
                 {
-                    if(GBDFrom.getTextFill()==Color.RED)
-                    {
+                    if (GBDFrom.getTextFill() == Color.RED) {
                         GBDFrom.setTextFill(Color.BLACK);
 
-                    }
-                    else
-                    {
+                    } else {
                         GBDFrom.setTextFill(Color.RED);
                         EURFrom.setTextFill(Color.BLACK);
                         USDFrom.setTextFill(Color.BLACK);
-                        fromMoney="GBD";
+                        fromMoney = "GBD";
 
                     }
                 }
             }
         });
 
-        Button GBDTo = new Button();
-        GBDTo.setText("GBD");
-        GBDTo.setLayoutX(250);
-        GBDTo.setLayoutY(160);
         GBDTo.setOnAction(new EventHandler<ActionEvent>() {
 
             public void handle(ActionEvent event) {
                 {
-                    if(GBDTo.getTextFill()==Color.RED)
-                    {
+                    if (GBDTo.getTextFill() == Color.RED) {
                         GBDTo.setTextFill(Color.BLACK);
 
-                    }
-                    else
-                    {
+                    } else {
                         GBDTo.setTextFill(Color.RED);
-                        toMoney="GBD";
+                        EURFrom.setTextFill(Color.BLACK);
+                        USDTo.setTextFill(Color.BLACK);
+                        toMoney = "GBD";
 
                     }
                 }
             }
         });
 
-        Button USDTo = new Button();
-        USDTo.setText("USD");
-        USDTo.setLayoutX(250);
-        USDTo.setLayoutY(130);
         USDTo.setOnAction(new EventHandler<ActionEvent>() {
 
             public void handle(ActionEvent event) {
                 {
-                    if(USDTo.getTextFill()==Color.RED)
-                    {
+                    if (USDTo.getTextFill() == Color.RED) {
                         USDTo.setTextFill(Color.BLACK);
 
-                    }
-                    else
-                    {
+                    } else {
                         USDTo.setTextFill(Color.RED);
                         GBDTo.setTextFill(Color.BLACK);
-                        toMoney="USD";
+                        EURFrom.setTextFill(Color.BLACK);
+                        toMoney = "USD";
 
                     }
                 }
             }
         });
 
-        Button EURTo = new Button();
-        EURTo.setText("EUR");
-        EURTo.setLayoutX(250);
-        EURTo.setLayoutY(100);
         EURTo.setOnAction(new EventHandler<ActionEvent>() {
 
             public void handle(ActionEvent event) {
                 {
-                    if(EURTo.getTextFill()==Color.RED)
-                    {
+                    if (EURTo.getTextFill() == Color.RED) {
                         EURTo.setTextFill(Color.BLACK);
 
-                    }
-                    else
-                    {
+                    } else {
                         EURTo.setTextFill(Color.RED);
                         GBDTo.setTextFill(Color.BLACK);
                         USDTo.setTextFill(Color.BLACK);
-                        toMoney="EUR";
+                        toMoney = "EUR";
 
                     }
                 }
             }
         });
 
-        Button calcul = new Button();
-        calcul.setText("Calcul");
-        calcul.setLayoutX(125);
-        calcul.setLayoutY(225);
         calcul.setOnAction(new EventHandler<ActionEvent>() {
 
             public void handle(ActionEvent event) {
+                try
+                {
                 numberTo.setText(calcul(fromMoney,toMoney,numberFrom.getText()));
+                }
+                catch(Throwable t)
+                {
+                    System.out.println("error parse");
+                }
             }
         });
 
@@ -204,10 +217,9 @@ public class App extends Application {
         primaryStage.show();
     }
 
+    //Calculus fonction
     private String calcul(String fromMoney,String toMoney,String value)
     {
-
-
         if(fromMoney.equalsIgnoreCase("EUR"))
         {
 
